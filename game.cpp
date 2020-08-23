@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cstdlib>
 
 #include "board.h"
 
@@ -7,10 +8,8 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    cout << "What the fuck" << endl;
-
-    t_tile x;
-    x = empty;
+    Board b = Board();
+    b.displayBoard();
 
     return 0;
 }

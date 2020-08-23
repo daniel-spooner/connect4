@@ -1,10 +1,13 @@
 all: connect4
 
-connect4: game.o
-	g++ game.o -o connect4
+connect4: game.o board.o
+	g++ game.o board.o -o connect4
 
 game.o: game.cpp board.h
 	g++ -c game.cpp
+
+board.o: board.cpp board.h
+	g++ -c board.cpp
 
 clean:
 	rm *.o connect4
