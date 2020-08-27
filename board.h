@@ -14,13 +14,17 @@ class Board {
     private:
         t_tile board[SIZE_Y][SIZE_X];
 
+        t_tile checkVertical(int x, int y);
+        t_tile checkHorizontal(int x, int y);
+        t_tile checkDownDiag(int x, int y);
+        t_tile checkUpDiag(int x, int y);
+
     public:
 
-        
         Board();
 
-        bool addMove(t_tile type, unsigned int position);
-        bool checkWin();
+        bool addMove(t_tile type, int position);
+        t_tile checkFullWin();
         void displayBoard();
 
 };
