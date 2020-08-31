@@ -1,10 +1,16 @@
 all: connect4
 
-connect4: game.o board.o
-	g++ game.o board.o -o connect4
+connect4: game.o player.o playing_entity.o board.o
+	g++ game.o player.o playing_entity.o board.o -o connect4
 
-game.o: game.cpp board.h
+game.o: game.cpp player.h playing_entity.h board.h
 	g++ -c game.cpp
+
+player.o: player.cpp player.h playing_entity.h board.h
+	g++ -c player.cpp
+
+playing_entity.o: playing_entity.cpp playing_entity.h board.h
+	g++ -c playing_entity.cpp
 
 board.o: board.cpp board.h
 	g++ -c board.cpp

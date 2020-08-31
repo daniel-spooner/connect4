@@ -30,6 +30,17 @@ bool Board::addMove(t_tile type, int position) {
     return true;
 }
 
+bool Board::checkBoardFull() { // Check if there are any valid moves left
+
+    for(int x = 0; x < SIZE_X; x ++) {
+        if(board[SIZE_Y - 1][x] == empty) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 t_tile Board::checkVertical(int x, int y){ // '|'
 
     if (x < 0 || x >= SIZE_X || y < 0 || y >= SIZE_Y - 3)

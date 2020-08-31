@@ -2,8 +2,6 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <iostream>
-
 #define SIZE_X 7
 #define SIZE_Y 6
 
@@ -24,6 +22,7 @@ class Board {
         Board();
 
         bool addMove(t_tile type, int position);
+        bool checkBoardFull();
         t_tile checkFullWin();
         void displayBoard();
 
